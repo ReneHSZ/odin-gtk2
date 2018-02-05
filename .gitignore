@@ -1,0 +1,9 @@
+test
+*.out
+*.exe
+*.o
+*.obj
+*.a
+*.so
+
+
