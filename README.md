@@ -2,7 +2,7 @@
 [![license](https://img.shields.io/github/license/ReneHSZ/odin-gtk2.svg)](https://github.com/ReneHSZ/odin-gtk2/blob/master/LICENSE)
 [![downloads](https://img.shields.io/github/downloads/ReneHSZ/odin-gtk2/total.svg)](https://github.com/ReneHSZ/odin-gtk2)
 [![contributors](https://img.shields.io/github/contributors/ReneHSZ/odin-gtk2.svg)](https://github.com/ReneHSZ/odin-gtk2)
-[![issues](https://img.shields.io/github/issues/ReneHSZ/odin-gtk2.svg)](https://github.com/ReneHSZ/odin-gtk2)
+[![issues](https://img.shields.io/github/issues/ReneHSZ/odin-gtk2.svg)](https://github.com/ReneHSZ/odin-gtk2/issues)
 
 GTK+2 bindings for the Odin programming language. Currently incomplete, PRs welcome!
 
