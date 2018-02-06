@@ -10,9 +10,9 @@ Color :: struct {
 GC_FOREGROUND :: 1 << 0;
 
 GC :: struct {
-	// TODO!
+	// TODO(renehsz): Fill this out
 }
 
 Pixmap :: struct {
-	// TODO!
+	// TODO(renehsz): Fill this out
 }

@@ -1,17 +1,14 @@
 foreign import gtk2 "system:gtk-x11-2.0"
-foreign import pangocairo "system:pangocairo-1.0"
 foreign import atk "system:atk-1.0"
 foreign import cairo "system:cairo"
 foreign import gdk_pixbuf "system:gdk_pixbuf-2.0"
 foreign import gio "system:gio-2.0"
-foreign import pangoft "system:pangoft2-1.0"
-foreign import pango "system:pango-1.0"
 foreign import gobject "system:gobject-2.0"
-foreign import glib "system:glib-2.0"
 foreign import fontconfig "system:fontconfig"
 foreign import freetype "system:freetype"
 
 import gdk "gdk2.odin"
+import pango "pango.odin"
 
 gboolean :: i32;
 
@@ -27,7 +24,7 @@ Style :: struct {
 
 	black:     gdk.Color,
 	white:     gdk.Color,
-	font_desc: rawptr, // TODO!
+	font_desc: ^pango.FontDescription,
 
 	xthickness:i32,
 	ythickness:i32,
@@ -84,6 +81,7 @@ WindowType :: enum i32 {
 	WINDOW_POPUP,
 }
 
+@(default_calling_convention="c")
 foreign gtk2 {
 	@(link_name="gtk_init")        init        :: proc(argc: ^int, argv: ^^^byte) ---;
 	@(link_name="gtk_main")        gtk_main    :: proc() ---;
