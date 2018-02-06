@@ -5,6 +5,13 @@ gboolean :: i32;
 guint    :: u32;
 gpointer :: rawptr;
 
+// GList is a doubly linked list
+List :: struct {
+	data: rawptr,
+	next: ^List,
+	prev: ^List,
+}
+
 gboolean_to_bool :: proc(b: gboolean) -> bool {
 	return b != 0;
 }
