@@ -1,5 +1,7 @@
 foreign import gdk2 "system:gdk-x11-2.0"
 
+import g "glib.odin"
+
 Color :: struct {
 	pixel: u32,
 	red:   u16,
@@ -39,6 +41,8 @@ Geometry :: struct {
 	win_gravity:  Gravity,
 }
 
+Window :: struct {};
+
 EventKey :: struct {
 	event_type:       EventType,
 	window:           ^Window,
@@ -60,8 +64,8 @@ EventType :: enum i32 {
 	EXPOSE,
 	MOTION_NOTIFY,
 	BUTTON_PRESS,
-	2BUTTON_PRESS,
-	3BUTTON_PRESS,
+	TWO_BUTTON_PRESS,
+	THREE_BUTTON_PRESS,
 	BUTTON_RELEASE,
 	KEY_PRESS,
 	KEY_RELEASE,
