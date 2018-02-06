@@ -1,11 +1,9 @@
 foreign import glib "system:glib-2.0"
 
-import "core:c.odin"
-
-gint     :: #alias c.c_int;
-gboolean :: #alias c.c_int;
-guint    :: #alias c.c_uint;
-gpointer :: #alias rawptr;
+gint     :: i32;
+gboolean :: i32;
+guint    :: u32;
+gpointer :: rawptr;
 
 gboolean_to_bool :: proc(b: gboolean) -> bool {
 	return b != 0;

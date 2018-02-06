@@ -56,7 +56,7 @@ FontsetSimple :: struct {
 }
 
 Rectangle :: struct {
-	x, y, width, height: g.gint;
+	x, y, width, height: g.gint,
 }
 
 
@@ -116,8 +116,8 @@ FontMask :: enum {
 	GRAVITY,
 }
 
-Glyph              :: #alias u32;
-FontsetForeachFunc :: #alias proc(fontset: ^Fontset, font: ^Font, user_data: g.gpointer) -> g.gboolean)
+Glyph              :: u32;
+FontsetForeachFunc :: proc(fontset: ^Fontset, font: ^Font, user_data: g.gpointer) -> g.gboolean;
 
 @(default_calling_convention="c")
 foreign pango {
