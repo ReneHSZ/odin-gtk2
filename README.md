@@ -4,7 +4,7 @@
 [![contributors](https://img.shields.io/github/contributors/ReneHSZ/odin-gtk2.svg)](https://github.com/ReneHSZ/odin-gtk2/graphs/contributors)
 [![issues](https://img.shields.io/github/issues/ReneHSZ/odin-gtk2.svg)](https://github.com/ReneHSZ/odin-gtk2/issues)
 
-GTK+2 bindings for the Odin programming language. Currently incomplete, PRs welcome!
+GTK+2 bindings for the [Odin programming language](http://odin-lang.org). Currently incomplete, PRs welcome!
 
 You have to install the GTK+2 library for it to be linked with.
 This is tested under Ubuntu 17.10, it should work under any other Linux distribution though.
