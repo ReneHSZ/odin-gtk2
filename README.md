@@ -1,6 +1,5 @@
 # odin-gtk2
 [![license](https://img.shields.io/github/license/ReneHSZ/odin-gtk2.svg)](https://github.com/ReneHSZ/odin-gtk2/blob/master/LICENSE)
-[![downloads](https://img.shields.io/github/downloads/ReneHSZ/odin-gtk2/total.svg)](https://github.com/ReneHSZ/odin-gtk2)
 [![contributors](https://img.shields.io/github/contributors/ReneHSZ/odin-gtk2.svg)](https://github.com/ReneHSZ/odin-gtk2/graphs/contributors)
 [![issues](https://img.shields.io/github/issues/ReneHSZ/odin-gtk2.svg)](https://github.com/ReneHSZ/odin-gtk2/issues)
 
