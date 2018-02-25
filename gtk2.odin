@@ -11,8 +11,6 @@ import gdk "gdk2.odin"
 import g "glib.odin"
 import pango "pango.odin"
 
-gboolean :: i32;
-
 Style :: struct {
 	fg:        [5]gdk.Color,
 	bg:        [5]gdk.Color,
