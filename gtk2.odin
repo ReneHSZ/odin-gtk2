@@ -1,9 +1,8 @@
 foreign import gtk2 "system:gtk-x11-2.0"
+foreign import pthread "system:pthread"
 foreign import atk "system:atk-1.0"
 foreign import cairo "system:cairo"
-foreign import gdk_pixbuf "system:gdk_pixbuf-2.0"
 foreign import gio "system:gio-2.0"
-foreign import gobject "system:gobject-2.0"
 foreign import fontconfig "system:fontconfig"
 foreign import freetype "system:freetype"
 
@@ -62,6 +61,11 @@ Bin :: struct {
 	// TODO!
 }
 
+/* TODO(ReneHSZ): A window actually inherits from a Widget. Therefore you can
+ * pass in a Window to a function taking a Widget and sometimes the other way
+ * around. We cannot represent this well in this language. Possilby just take
+ * in a rawptr everywhere?
+ */
 Window :: struct {
 	bin:  Bin,
 	priv: ^WindowPrivate,
@@ -115,13 +119,14 @@ WindowPosition :: enum i32 {
 }
 
 WindowGroup :: struct {
-	// TODO!
+	// TODO(ReneHSZ): Fill out struct members!
 }
 
 @(default_calling_convention="c")
 foreign gtk2 {
 	@(link_name="gtk_init")                                       init                                       :: proc(argc: ^int, argv: ^^^byte) ---;
 	@(link_name="gtk_main")                                       gtk_main                                   :: proc() ---;
+	@(link_name="gtk_main_quit")                                  gtk_main_quit                              :: proc() ---;
 	@(link_name="gtk_widget_show")                                widget_show                                :: proc(widget: ^Widget) ---;
 
 	@(link_name="gtk_window_new")                                 window_new                                 :: proc(window_type: WindowType) -> ^Widget ---;

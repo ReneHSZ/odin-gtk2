@@ -1,4 +1,5 @@
 foreign import gdk2 "system:gdk-x11-2.0"
+foreign import gdk_pixbuf "system:gdk_pixbuf-2.0"
 
 import g "glib.odin"
 
@@ -43,6 +44,10 @@ Geometry :: struct {
 
 Window :: struct {};
 
+Event :: struct {
+	// TODO(renehsz): Fill this out
+}
+
 EventKey :: struct {
 	event_type:       EventType,
 	window:           ^Window,
@@ -54,7 +59,7 @@ EventKey :: struct {
 	str:              ^byte,
 	hardware_keycode: u16,
 	group:            u8,
-	is_modifier:      g.guint, // TODO(renehsz): Handle :1 (see https://developer.gnome.org/gdk2/stable/gdk2-Event-Structures.html)
+	is_modifier:      g.guint = 1,
 }
 
 EventType :: enum i32 {
