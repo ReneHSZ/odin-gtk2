@@ -1,8 +1,10 @@
+package pango
+
 foreign import pangocairo "system:pangocairo-1.0"
 foreign import pangoft "system:pangoft2-1.0"
 foreign import pango "system:pango-1.0"
 
-import g "glib.odin"
+import g "../glib"
 
 /* Only pointers to structs are passed to functions in pango.
  * Therefore it is not that important to describe all struct members to the compiler. */

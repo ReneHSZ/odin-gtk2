@@ -1,14 +1,16 @@
-foreign import gtk2 "system:gtk-x11-2.0"
-foreign import pthread "system:pthread"
-foreign import atk "system:atk-1.0"
-foreign import cairo "system:cairo"
-foreign import gio "system:gio-2.0"
-foreign import fontconfig "system:fontconfig"
-foreign import freetype "system:freetype"
+package gtk2
 
-import gdk "gdk2.odin"
-import g "glib.odin"
-import pango "pango.odin"
+foreign import gtk2       "system:gtk-x11-2.0"
+foreign import pthread    "system:pthread"
+foreign import atk        "system:atk-1.0"
+foreign import cairo      "system:cairo"
+foreign import gio        "system:gio-2.0"
+foreign import fontconfig "system:fontconfig"
+foreign import freetype   "system:freetype"
+
+import gdk   "../gdk2"
+import g     "../glib"
+import pango "../pango"
 
 Style :: struct {
 	fg:        [5]gdk.Color,
@@ -124,14 +126,14 @@ WindowGroup :: struct {
 
 @(default_calling_convention="c")
 foreign gtk2 {
-	@(link_name="gtk_init")                                       init                                       :: proc(argc: ^int, argv: ^^^byte) ---;
+	@(link_name="gtk_init")                                       init                                       :: proc(argc: ^int, argv: ^^cstring) ---;
 	@(link_name="gtk_main")                                       gtk_main                                   :: proc() ---;
 	@(link_name="gtk_main_quit")                                  gtk_main_quit                              :: proc() ---;
 	@(link_name="gtk_widget_show")                                widget_show                                :: proc(widget: ^Widget) ---;
 
 	@(link_name="gtk_window_new")                                 window_new                                 :: proc(window_type: WindowType) -> ^Widget ---;
-	@(link_name="gtk_window_set_title")                           window_set_title                           :: proc(window: ^Window, title: ^byte) ---;
-	@(link_name="gtk_window_set_wmclass")                         window_set_wmclass                         :: proc(window: ^Window, wmclass_name, wmclass_class: ^byte) ---;
+	@(link_name="gtk_window_set_title")                           window_set_title                           :: proc(window: ^Window, title: cstring) ---;
+	@(link_name="gtk_window_set_wmclass")                         window_set_wmclass                         :: proc(window: ^Window, wmclass_name, wmclass_class: cstring) ---;
 	@(link_name="gtk_window_set_policy")                          window_set_policy                          :: proc(window: ^Window, allow_shrink, allow_grow, auto_shrink: g.gint) ---;
 	@(link_name="gtk_window_set_resizable")                       window_set_resizable                       :: proc(window: ^Window, resizable: g.gboolean) ---;
 	@(link_name="gtk_window_get_resizable")                       window_get_resizable                       :: proc(window: ^Window) -> g.gboolean ---;

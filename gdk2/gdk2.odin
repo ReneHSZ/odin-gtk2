@@ -1,7 +1,9 @@
+package gdk2
+
 foreign import gdk2 "system:gdk-x11-2.0"
 foreign import gdk_pixbuf "system:gdk_pixbuf-2.0"
 
-import g "glib.odin"
+import g "../glib"
 
 Color :: struct {
 	pixel: u32,
@@ -59,7 +61,7 @@ EventKey :: struct {
 	str:              ^byte,
 	hardware_keycode: u16,
 	group:            u8,
-	is_modifier:      g.guint = 1,
+	is_modifier:      g.guint,
 }
 
 EventType :: enum i32 {
